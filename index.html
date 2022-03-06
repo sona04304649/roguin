@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <center>
+            <label for="email">メールアドレスだけで簡単登録！</label>
+        </center>
+    <center>
+        <button type="button"id="btn">リセット</button><input type="text"placeholder="ユーザー名を入力"id="inp">
+    </center>
+    <center>
+<button type="button"id="button">リセット</button><input type="email"placeholder="メールアドレスを入力"id="input">
+    </center>
+    <center>
+        <button type="button"id="butn">リセット</button><input type="email"placeholder="メールアドレスを再入力"id="inpu">
+    </center>
+    <center>
+        <button type="submit"id="buttn">登録</button>
+    </center>
+    <center>
+        <div id="h1">
+            <h2>まだ登録が完了していません。</h2>
+        </div>
+    </center>
+</form>
+   <script>
+const button = document.getElementById("button");
 
+button.addEventListener("click",function(){
+    const input = document.getElementById("input");
+alert("リセットしますか？");
+    input.value = "";
+    
+});
+const buton = document.getElementById("butn");
+
+butn.addEventListener("click",function(){
+    const inpu = document.getElementById("inpu");
+alert("リセットしますか？");
+    inpu.value = "";
+    
+});
+const btn = document.getElementById("btn");
+
+btn.addEventListener("click",function(){
+    const inp = document.getElementById("inp");
+alert("リセットしますか？");
+    inp.value = "";
+    
+});
+const buttn = document.getElementById("buttn");
+
+
+buttn.addEventListener("click",function(){
+    if (input.value == ""){
+alert("メールアドレスを書いてください");
+    }else if (inpu.value == ""){
+alert("確認用メールアドレスを書いてください");
+    }else if(inpu.value != input.value){
+        alert("メールアドレスが違います！");
+        console.log("メールアドレスが少し違ったようです.......");
+    }else if(inpu.value == input.value){
+        if (inp.value == ""){
+inp.value = "名無しって何ですか？";
+}
+        alert("登録完了！「"+inp.value+"」さん！こんにちは！");
+        event.preventDefault();
+        console.log("登録が完了しました。登録名は「"+inp.value+"」さんです！");
+        const h2 = document.getElementById("h1");
+        h2.innerHTML = "登録が完了しました。";
+        h2.style.fontSize = "30px";
+        h2.style.backgroundColor = "moccasin";
+        h2.style.margin = "25px";
+        h2.style.fontWeight = "bold"
+    }});
+    </script>
+</body>
+<style>
+    label{
+    background-color: bisque;
+    font-size: 30px;
+    }
+    input{
+        background-color:rgb(240, 255, 248) ;
+        font-size: 25px;
+        margin: 10px;
+        height: 30px;
+    }
+    button{
+        background-color:ivory;
+        font-size: 20px;
+        
+    }
+    h2{
+        background-color: moccasin;
+        font-size: 30px;
+    }
+       </style>
+</html>
